@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --VeryDarkBlue: hsl(234, 12%, 34%);
+  --GrayishBlue: hsl(229, 6%, 66%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --font: 'Poppins', sans-serif;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  background-color: var(--VeryLightGray);
+}
+
+.container {
+  color: var(--VeryDarkBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: var(--font);
+}
+
+.intro {
+  margin-top: 90px;
+  /* margin: 10px auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro .title {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.intro .title span {
+  font-weight: 600;
+}
+.intro-text {
+  margin-bottom: 40px;
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: 0 20px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 20px 19px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 10px;
+}
+
+.card_title {
+  align-self: flex-start;
+}
+
+.card_icon {
+  max-width: 20%;
+  height: auto;
+}
+
+.card_cyan {
+  border-top: 5px solid var(--cyan);
+}
+.card_red {
+  border-top: 5px solid var(--red);
+}
+.card_orange {
+  border-top: 5px solid var(--orange);
+}
+.card_blue {
+  border-top: 5px solid var(--blue);
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template:
+      'first second fourth'
+      'first third fourth ';
+    margin: 20px 30px;
+  }
+  .card {
+    max-width: 100%;
+  }
+  .card_cyan {
+    grid-area: first;
+  }
+
+  .card_red {
+    grid-area: second;
+  }
+
+  .card_orange {
+    grid-area: third;
+  }
+
+  .card_blue {
+    grid-area: fourth;
+  }
+
+  .card_cyan,
+  .card_orange,
+  .card_red,
+  .card_blue {
+    align-self: center;
+    justify-self: center;
+  }
+}
